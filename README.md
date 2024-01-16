@@ -1,11 +1,11 @@
 # ConnectEmbed usage in Next.js
 
-This example demonstrates how to use `ConnectEmbed` component in Next.js to create a "Sign in" Page
+This example demonstrates how to use `ConnectEmbed` component in Next.js to create a "Sign in" Page. Checkout the [Live Demo](https://connect-embed-next.thirdweb-preview.com/)
 
-There are two examples in this repo
+This template contains two examples
 
-1. Connecting a wallet
-2. Connecting a wallet + Enforcing Authentication
+1. Connecting a wallet using `ConnectEmbed` component
+2. Connecting a wallet + Enforcing Authentication using `ConnectEmbed` component
 
 ## Using this template
 
@@ -19,7 +19,7 @@ There are two examples in this repo
   NEXT_PUBLIC_THIRDWEB_CLIENT_ID=...
   ```
 
-- If you want to test the Example #2 ( Connect + Enforce Authentication )
+- If you want to test the Example #2 ( Connect + Enforce Authentication ), You will need to set below mentioned environment variables in the `.env.local` file as well
 
   - set the `THIRDWEB_AUTH_PRIVATE_KEY` to the admin private key you want to use for Auth
   - Set `NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN` variable to the domain you want to use for Auth.
