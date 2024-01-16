@@ -1,40 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ConnectEmbed usage in Next.js
 
-## Getting Started
+This example demonstrates how to use `ConnectEmbed` component in Next.js to create a "Sign in" Page
 
-First, run the development server:
+There are two examples in this repo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Connecting a wallet
+2. Connecting a wallet + Enforcing Authentication
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Using this template
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Clone this repository locally and then install the dependencies using `npm install` or `yarn install`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Copy the `.env.example` file to `.env.local`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Create an API Key](https://portal.thirdweb.com/account/api-keys/create) and get the client id and set the `NEXT_PUBLIC_THIRDWEB_CLIENT_ID` environment variable in the `.env.local` file
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  ```env
+  NEXT_PUBLIC_THIRDWEB_CLIENT_ID=...
+  ```
+
+- If you want to test the Example #2 ( Connect + Enforce Authentication )
+
+  - set the `THIRDWEB_AUTH_PRIVATE_KEY` to the admin private key you want to use for Auth
+  - Set `NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN` variable to the domain you want to use for Auth.
+
+    ```env
+    THIRDWEB_AUTH_PRIVATE_KEY=...
+    NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN=example.com
+    ```
+
+## Start Dev server
+
+Run `npm run dev` or `yarn dev` to start the dev server
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [thirdweb Auth Documentation](https://portal.thirdweb.com/wallets/auth)
+- [ConnectEmbed Documentation](https://portal.thirdweb.com/react/v4/components/ConnectEmbed)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Join our Discord!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
