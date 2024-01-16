@@ -16,7 +16,7 @@ export default function Page() {
 	return (
 		<ThirdwebProvider
 			activeChain={'ethereum'}
-			clientId={process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID}
+			clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
 			authConfig={{
 				domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || '',
 				authUrl: '/api/auth',

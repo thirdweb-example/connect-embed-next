@@ -13,10 +13,10 @@ This template contains two examples
 
 - Copy the `.env.example` file to `.env.local`
 
-- [Create an API Key](https://portal.thirdweb.com/account/api-keys/create) and get the client id and set the `NEXT_PUBLIC_THIRDWEB_CLIENT_ID` environment variable in the `.env.local` file
+- [Create an API Key](https://portal.thirdweb.com/account/api-keys/create) and get the client id and set the `NEXT_PUBLIC_TEMPLATE_CLIENT_ID` environment variable in the `.env.local` file
 
   ```env
-  NEXT_PUBLIC_THIRDWEB_CLIENT_ID=...
+  NEXT_PUBLIC_TEMPLATE_CLIENT_ID=...
   ```
 
 - If you want to test the Example #2 ( Connect + Enforce Authentication ), You will need to set below mentioned environment variables in the `.env.local` file as well
