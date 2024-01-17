@@ -2,8 +2,13 @@ import {
 	ConnectEmbed,
 	ConnectWallet,
 	ThirdwebProvider,
+	coinbaseWallet,
 	darkTheme,
+	embeddedWallet,
+	metamaskWallet,
+	rainbowWallet,
 	useShowConnectEmbed,
+	walletConnect,
 } from '@thirdweb-dev/react';
 
 const customTheme = darkTheme({
@@ -21,6 +26,13 @@ export default function Page() {
 				domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || '',
 				authUrl: '/api/auth',
 			}}
+			supportedWallets={[
+				embeddedWallet(),
+				metamaskWallet(),
+				coinbaseWallet(),
+				walletConnect(),
+				rainbowWallet(),
+			]}
 		>
 			<PageContent />=
 		</ThirdwebProvider>
@@ -57,7 +69,9 @@ function SignedIn() {
 function SignIn() {
 	return (
 		<div>
-			<h1 className='flex text-center text-3xl tracking-tight justify-center'>Sign in</h1>
+			<h1 className='flex text-center text-3xl tracking-tight justify-center'>
+				Sign in to get started
+			</h1>
 			<div className='h-10' />
 			<div className='flex justify-center'>
 				<ConnectEmbed
