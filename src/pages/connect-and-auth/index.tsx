@@ -82,6 +82,9 @@ function SignIn() {
 							// you can also redirect to a different page using Next.js router
 						},
 					}}
+					style={{
+						border: 'none',
+					}}
 				/>
 			</div>
 		</div>
