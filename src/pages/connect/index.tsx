@@ -1,3 +1,6 @@
+import { SignedIn } from '@/components/SignedIn';
+import { SignInLayout } from '@/components/SigninLayout';
+import { SkeletonPage } from '@/components/SkeletonPage';
 import {
 	ConnectEmbed,
 	ConnectWallet,
@@ -7,15 +10,11 @@ import {
 	embeddedWallet,
 	metamaskWallet,
 	rainbowWallet,
+	useConnectionStatus,
 	useShowConnectEmbed,
+	useWalletContext,
 	walletConnect,
 } from '@thirdweb-dev/react';
-
-const customTheme = darkTheme({
-	colors: {
-		modalBg: 'black',
-	},
-});
 
 export default function Page() {
 	return (
@@ -30,57 +29,33 @@ export default function Page() {
 				rainbowWallet(),
 			]}
 		>
-			<PageContent />=
+			<PageContent />
 		</ThirdwebProvider>
 	);
 }
 
 function PageContent() {
+	const connectionStatus = useConnectionStatus();
 	const showConnectEmbed = useShowConnectEmbed();
+	const { isAutoConnecting } = useWalletContext();
 
-	return (
-		<main className={`min-h-screen py-12 px-2 xl:p-24`}>
-			{showConnectEmbed ? <SignIn /> : <SignedIn />}
-		</main>
-	);
-}
+	if (connectionStatus === 'unknown' || isAutoConnecting) {
+		return <SkeletonPage />;
+	}
 
-function SignedIn() {
-	return (
-		<div>
-			<h1 className='flex text-center text-3xl tracking-tight justify-center'>Welcome</h1>
-			<div className='h-10' />
-			<div className='flex justify-center'>
-				<ConnectWallet
-					dropdownPosition={{
-						align: 'center',
-						side: 'bottom',
-					}}
-				/>
-			</div>
-		</div>
-	);
+	return <main>{showConnectEmbed ? <SignIn /> : <SignedIn />}</main>;
 }
 
 function SignIn() {
 	return (
-		<div>
-			<h1 className='flex text-center text-3xl tracking-tight justify-center'>
-				Sign in to get started
-			</h1>
-			<div className='h-10' />
-			<div className='flex justify-center'>
-				<ConnectEmbed
-					theme={customTheme}
-					onConnect={() => {
-						console.log('connected');
-						// you can also redirect to a different page using Next.js router
-					}}
-					style={{
-						border: 'none',
-					}}
-				/>
-			</div>
-		</div>
+		<SignInLayout>
+			<ConnectEmbed
+				theme='dark'
+				onConnect={() => {
+					console.log('connected');
+					// you can also redirect to a different page using Next.js router
+				}}
+			/>
+		</SignInLayout>
 	);
 }
