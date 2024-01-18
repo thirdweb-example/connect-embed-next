@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import art from '../../public/art.jpg';
+import art from '../../public/art.jpeg';
 
 export function SignInLayout(props: { children: React.ReactNode }) {
 	return (
