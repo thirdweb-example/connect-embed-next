@@ -76,6 +76,9 @@ function SignIn() {
 						console.log('connected');
 						// you can also redirect to a different page using Next.js router
 					}}
+					style={{
+						border: 'none',
+					}}
 				/>
 			</div>
 		</div>
