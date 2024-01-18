@@ -1,7 +1,7 @@
 .loader {
 	width: 24px;
 	height: 24px;
-	border: 2px solid black;
+	border: 2px solid #333;
 	border-bottom-color: transparent;
 	border-radius: 50%;
 	display: inline-block;
